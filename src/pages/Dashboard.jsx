@@ -4,6 +4,7 @@ import useApi from '../hooks/useApi';
 import Card from '../components/Card';
 import Button from '../components/Button';
 import Loading from '../components/Loading';
+import { CheckCircle2, MessageCircle, Folder, FileText } from 'lucide-react';
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -40,11 +41,12 @@ const Dashboard = () => {
   ];
 
   const getActivityIcon = (type) => {
+    const iconClasses = "w-5 h-5";
     switch (type) {
-      case 'task': return '✅';
-      case 'comment': return '💬';
-      case 'project': return '📁';
-      default: return '📝';
+      case 'task': return <CheckCircle2 className={`${iconClasses} text-green-500`} />;
+      case 'comment': return <MessageCircle className={`${iconClasses} text-blue-500`} />;
+      case 'project': return <Folder className={`${iconClasses} text-yellow-500`} />;
+      default: return <FileText className={`${iconClasses} text-gray-500`} />;
     }
   };
 

@@ -1,43 +1,58 @@
 import React from 'react';
 import Card from '../components/Card';
 import Button from '../components/Button';
+import { 
+  Atom, 
+  Palette, 
+  Zap, 
+  Navigation, 
+  Anchor, 
+  RefreshCw, 
+  Smartphone, 
+  Moon, 
+  Puzzle, 
+  Settings, 
+  Link2, 
+  HardDrive 
+} from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const About = () => {
   const technologies = [
     {
       name: 'React 18',
       description: 'Latest version of React with concurrent features',
-      icon: '⚛️',
+      icon: <Atom className="w-6 h-6" />,
       color: 'text-blue-600 dark:text-blue-400'
     },
     {
       name: 'Tailwind CSS',
       description: 'Utility-first CSS framework for rapid UI development',
-      icon: '🎨',
+      icon: <Palette className="w-6 h-6" />,
       color: 'text-cyan-600 dark:text-cyan-400'
     },
     {
       name: 'Vite',
       description: 'Fast build tool and development server',
-      icon: '⚡',
+      icon: <Zap className="w-6 h-6" />,
       color: 'text-purple-600 dark:text-purple-400'
     },
     {
       name: 'React Router',
       description: 'Declarative routing for React applications',
-      icon: '🛣️',
+      icon: <Navigation className="w-6 h-6" />,
       color: 'text-red-600 dark:text-red-400'
     },
     {
       name: 'Custom Hooks',
       description: 'Reusable stateful logic with React hooks',
-      icon: '🎣',
+      icon: <Anchor className="w-6 h-6" />,
       color: 'text-green-600 dark:text-green-400'
     },
     {
       name: 'Context API',
       description: 'Built-in state management solution',
-      icon: '🔄',
+      icon: <RefreshCw className="w-6 h-6" />,
       color: 'text-orange-600 dark:text-orange-400'
     }
   ];
@@ -46,191 +61,234 @@ const About = () => {
     {
       title: 'Responsive Design',
       description: 'Works perfectly on desktop, tablet, and mobile devices',
-      icon: '📱'
+      icon: <Smartphone className="w-6 h-6" />
     },
     {
       title: 'Dark Mode Support',
       description: 'Toggle between light and dark themes for comfortable viewing',
-      icon: '🌙'
+      icon: <Moon className="w-6 h-6" />
     },
     {
       title: 'Component Architecture',
       description: 'Modular, reusable components following React best practices',
-      icon: '🧩'
+      icon: <Puzzle className="w-6 h-6" />
     },
     {
       title: 'State Management',
       description: 'Efficient state management using React hooks and Context API',
-      icon: '🔧'
+      icon: <Settings className="w-6 h-6" />
     },
     {
       title: 'API Integration',
       description: 'Seamless integration with external APIs and data fetching',
-      icon: '🔗'
+      icon: <Link2 className="w-6 h-6" />
     },
     {
       title: 'Local Storage',
       description: 'Persistent data storage for tasks and user preferences',
-      icon: '💾'
+      icon: <HardDrive className="w-6 h-6" />
     }
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            About This Project
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            A comprehensive React application showcasing modern web development 
-            practices, component architecture, and state management techniques.
-          </p>
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-indigo-900/20">
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-7xl mx-auto">
+          {/* Hero Section with enhanced visual appeal */}
+          <div className="relative text-center mb-24">
+            {/* Decorative elements */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-purple-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            </div>
 
-        {/* Project Overview */}
-        <Card className="mb-12">
-          <Card.Header>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Project Overview
-            </h2>
-          </Card.Header>
-          <Card.Content>
-            <div className="prose dark:prose-invert max-w-none">
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                This React application serves as a comprehensive demonstration of modern 
-                web development techniques and best practices. Built with React 18 and 
-                leveraging the latest features like concurrent rendering, the project 
-                showcases component-based architecture, efficient state management, and 
-                responsive design principles.
-              </p>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                The application features a clean, intuitive interface with support for 
-                both light and dark themes, ensuring accessibility and user comfort across 
-                different viewing preferences. Every component is designed to be reusable, 
-                maintainable, and follows React best practices for optimal performance.
-              </p>
-              <p className="text-gray-600 dark:text-gray-400">
-                Whether you're exploring the task management features, browsing through 
-                the responsive layouts, or examining the code structure, this project 
-                demonstrates practical implementation of modern React patterns and 
-                contemporary web development standards.
+            <div className="relative z-10">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-200/20 dark:border-blue-700/20 backdrop-blur-sm mb-8">
+                <span className="text-sm font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Modern React Development
+                </span>
+              </div>
+              
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400">
+                About This Project
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                A comprehensive showcase of modern web development practices, 
+                focusing on component architecture and user experience.
               </p>
             </div>
-          </Card.Content>
-        </Card>
-
-        {/* Technologies Used */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-            Technologies & Tools
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {technologies.map((tech, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <Card.Content className="text-center">
-                  <div className="text-4xl mb-4">{tech.icon}</div>
-                  <h3 className={`text-xl font-semibold mb-2 ${tech.color}`}>
-                    {tech.name}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {tech.description}
-                  </p>
-                </Card.Content>
-              </Card>
-            ))}
           </div>
-        </div>
 
-        {/* Key Features */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-            Key Features
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {features.map((feature, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <Card.Content className="flex items-start space-x-4">
-                  <div className="text-3xl flex-shrink-0">{feature.icon}</div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+          {/* Technologies Section with enhanced cards */}
+          <div className="mb-24">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400 mb-6">
+                Built With Modern Technologies
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                Leveraging cutting-edge tools and frameworks for optimal performance
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {technologies.map((tech, index) => (
+                <Card 
+                  key={index} 
+                  hover 
+                  className="group p-6 transform transition-all duration-300 hover:scale-105 hover:-translate-y-1 backdrop-blur-sm"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className={`${tech.color} p-3 rounded-xl bg-gray-100 dark:bg-gray-800 group-hover:scale-110 transition-transform duration-300`}>
+                      {tech.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        {tech.name}
+                      </h3>
+                      <p className="text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-200 transition-colors">
+                        {tech.description}
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Features Section with micro-interactions */}
+          <div className="mb-24">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400 mb-6">
+                Key Features & Capabilities
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                Carefully crafted features that enhance user experience
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {features.map((feature, index) => (
+                <Card 
+                  key={index} 
+                  hover 
+                  className="group p-8 transform transition-all duration-300 hover:scale-105"
+                >
+                  <div className="text-center">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-500 text-white mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400">
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 group-hover:text-gray-900 dark:group-hover:text-gray-200 transition-colors">
                       {feature.description}
                     </p>
                   </div>
-                </Card.Content>
-              </Card>
-            ))}
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Development Highlights */}
-        <Card className="mb-12">
-          <Card.Header>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Development Highlights
-            </h2>
-          </Card.Header>
-          <Card.Content>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                  Architecture & Design
-                </h3>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-                  <li>• Component-based modular architecture</li>
-                  <li>• Separation of concerns and single responsibility</li>
-                  <li>• Reusable UI components with consistent styling</li>
-                  <li>• Responsive design using Tailwind CSS utilities</li>
-                </ul>
+          {/* Development Highlights with enhanced visual hierarchy */}
+          <Card className="relative overflow-hidden p-12 mb-24" gradient>
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 dark:from-blue-400/10 dark:via-purple-400/10 dark:to-pink-400/10"></div>
+            
+            <div className="relative z-10">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400 mb-4">
+                  Development Highlights
+                </h2>
+                <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                  Exploring the technical excellence behind our implementation
+                </p>
               </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                  Performance & UX
-                </h3>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-                  <li>• Fast development and build times with Vite</li>
-                  <li>• Optimized re-renders with React 18 features</li>
-                  <li>• Smooth animations and transitions</li>
-                  <li>• Cross-browser compatibility and accessibility</li>
-                </ul>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm rounded-xl p-8 border border-white/10 dark:border-gray-700/10 hover:border-white/20 dark:hover:border-gray-700/20 transition-colors">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-3"></div>
+                    Architecture & Design
+                  </h3>
+                  <ul className="space-y-4 text-gray-600 dark:text-gray-400">
+                    <li className="flex items-center space-x-3 group">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500/50 group-hover:bg-blue-500 transition-colors"></div>
+                      <span className="group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Component-based modular architecture</span>
+                    </li>
+                    <li className="flex items-center space-x-3 group">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500/50 group-hover:bg-blue-500 transition-colors"></div>
+                      <span className="group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Separation of concerns and single responsibility</span>
+                    </li>
+                    <li className="flex items-center space-x-3 group">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500/50 group-hover:bg-blue-500 transition-colors"></div>
+                      <span className="group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Reusable UI components with consistent styling</span>
+                    </li>
+                    <li className="flex items-center space-x-3 group">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500/50 group-hover:bg-blue-500 transition-colors"></div>
+                      <span className="group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Responsive design using Tailwind CSS utilities</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm rounded-xl p-8 border border-white/10 dark:border-gray-700/10 hover:border-white/20 dark:hover:border-gray-700/20 transition-colors">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-teal-500 rounded-full mr-3"></div>
+                    Performance & UX
+                  </h3>
+                  <ul className="space-y-4 text-gray-600 dark:text-gray-400">
+                    <li className="flex items-center space-x-3 group">
+                      <div className="w-1.5 h-1.5 rounded-full bg-green-500/50 group-hover:bg-green-500 transition-colors"></div>
+                      <span className="group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Fast development and build times with Vite</span>
+                    </li>
+                    <li className="flex items-center space-x-3 group">
+                      <div className="w-1.5 h-1.5 rounded-full bg-green-500/50 group-hover:bg-green-500 transition-colors"></div>
+                      <span className="group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Optimized re-renders with React 18 features</span>
+                    </li>
+                    <li className="flex items-center space-x-3 group">
+                      <div className="w-1.5 h-1.5 rounded-full bg-green-500/50 group-hover:bg-green-500 transition-colors"></div>
+                      <span className="group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Smooth animations and transitions</span>
+                    </li>
+                    <li className="flex items-center space-x-3 group">
+                      <div className="w-1.5 h-1.5 rounded-full bg-green-500/50 group-hover:bg-green-500 transition-colors"></div>
+                      <span className="group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Cross-browser compatibility and accessibility</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </Card.Content>
-        </Card>
+          </Card>
 
-        {/* Call to Action */}
-        <div className="text-center">
-          <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border-blue-200 dark:border-blue-800">
-            <Card.Content className="py-8">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Explore the Code
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
-                Dive into the source code to see how these features are implemented. 
-                The project structure is organized and well-documented to help you 
-                understand modern React development patterns.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  variant="primary" 
-                  size="lg"
-                  onClick={() => window.open('https://github.com/WayneChibeu/week-3-react-js-assignment-WayneChibeu-1', '_blank')}
-                >
-                  View on GitHub
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  onClick={() => window.open('https://reactjs.org', '_blank')}
-                >
-                  Learn React
-                </Button>
+          {/* Call to Action with enhanced design */}
+          <Card className="overflow-hidden mb-16">
+            <div className="relative p-12 text-center">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 dark:from-blue-400/10 dark:via-purple-400/10 dark:to-pink-400/10"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                  Ready to Start Building?
+                </h2>
+                <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+                  Use this project as a foundation for your next React application. 
+                  Modern, scalable, and ready for production.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    variant="primary"
+                    size="lg"
+                    className="group transform transition-all duration-300 hover:scale-105"
+                  >
+                    Get Started
+                  </Button>
+                  <Button 
+                    variant="outline"
+                    size="lg"
+                    className="group transform transition-all duration-300 hover:scale-105"
+                  >
+                    View Documentation
+                  </Button>
+                </div>
               </div>
-            </Card.Content>
+            </div>
           </Card>
         </div>
       </div>
