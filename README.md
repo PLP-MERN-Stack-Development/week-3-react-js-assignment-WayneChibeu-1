@@ -7,7 +7,7 @@ A modern, feature-rich task management application built with React, showcasing 
 
 ## 🌐 Live Demo
 
-[View Live Demo](https://your-deployment-url-here) <!-- Replace with your deployed application URL -->
+[View Live Demo](https://taskboard-x.vercel.app/)
 
 ## ✨ Features
 
@@ -138,7 +138,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Wayne Chibeu**
 - GitHub: [@WayneChibeu](https://github.com/WayneChibeu)
-- LinkedIn: [Wayne Chibeu](https://www.linkedin.com/in/wayne-chibeu/)
+- LinkedIn: [Wayne Chibeu](https://www.linkedin.com/in/wayne-chibeu-482451278/)
 
 ## 🙏 Acknowledgments
 
